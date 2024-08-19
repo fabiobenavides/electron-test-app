@@ -18,6 +18,7 @@ app.whenReady().then(() => {
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
+      ipcMain.handle('ping', () => 'pong')
       createWindow()
     }
   })
